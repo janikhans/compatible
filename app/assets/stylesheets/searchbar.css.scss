@@ -1,4 +1,4 @@
-.webdesigntuts-workshop form {
+.search form {
     background: #111;
     background: -webkit-linear-gradient(#1b1b1b, #111);
     background: -moz-linear-gradient(#1b1b1b, #111);
@@ -16,7 +16,7 @@
     z-index: 1;
 }
 
-.webdesigntuts-workshop input {
+.search input {
     background: #222;
     background: -webkit-linear-gradient(#333, #222);    
     background: -moz-linear-gradient(#333, #222);   
@@ -39,19 +39,19 @@
     width: 200px;
 }
 
-.ie .webdesigntuts-workshop input {
+.ie .search input {
     line-height: 40px;
 }
 
-.webdesigntuts-workshop input::-webkit-input-placeholder {
+.search input::-webkit-input-placeholder {
    color: #888;
 }
 
-.webdesigntuts-workshop input:-moz-placeholder {
+.search input:-moz-placeholder {
    color: #888;
 }
 
-.webdesigntuts-workshop input:focus {
+.search input:focus {
     -webkit-animation: glow 800ms ease-out infinite alternate;
     -moz-animation: glow 800ms ease-out infinite alternate;
     -o-animation: glow 800ms ease-out infinite alternate;
@@ -69,15 +69,15 @@
     outline: none;
 }
 
-.webdesigntuts-workshop input:focus::-webkit-input-placeholder { 
+.search input:focus::-webkit-input-placeholder { 
     color: #efe;
 }
 
-.webdesigntuts-workshop input:focus:-moz-placeholder {
+.search input:focus:-moz-placeholder {
     color: #efe;
 }
 
-.webdesigntuts-workshop button {
+.search button {
     background: #222;
     background: -webkit-linear-gradient(#333, #222);
     background: -moz-linear-gradient(#333, #222);
@@ -108,8 +108,8 @@
     width: 80px;
 }   
 
-.webdesigntuts-workshop button:hover,
-.webdesigntuts-workshop button:focus {
+.search button:hover,
+.search button:focus {
     background: #292929;
     background: -webkit-linear-gradient(#393939, #292929);  
     background: -moz-linear-gradient(#393939, #292929); 
@@ -120,7 +120,7 @@
     outline: none;
 }
 
-.webdesigntuts-workshop button:active {
+.search button:active {
     background: #292929;
     background: -webkit-linear-gradient(#393939, #292929);
     background: -moz-linear-gradient(#393939, #292929);
@@ -215,4 +215,15 @@
   position: relative;
   text-shadow: 0 -1px 0 #000;
   width: 15px
+}
+
+.search:before,
+.search:after {
+    content: '';
+    display: block; 
+    height: 1px;
+    left: 50%;
+    margin: 0 0 0 -400px;
+    position: absolute;
+    width: 800px;
 }

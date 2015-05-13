@@ -1,18 +1,8 @@
 Rails.application.routes.draw do
-  get 'parts/index'
-
-  get 'parts/show'
-
-  get 'parts/new'
-
-  get 'parts/edit'
-
-  resources :vehicles
-
   devise_for :users
-
+  resources :parts
+  resources :vehicles
   resources :users, only: [:show]
-
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

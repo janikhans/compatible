@@ -1,0 +1,9 @@
+<li id="part-<%= part.id %>">
+	<span class="part-id"><%= part.id %></span>
+  <span class="user"><%= link_to part.user.email, part.user %></span>
+  <span class="content"><%= part.name %> <%= part.comment %> </span>
+  <span class="modifications"><%= part.modifications %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(part.created_at) %> ago.
+  </span>
+</li>

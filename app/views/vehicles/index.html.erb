@@ -1,6 +1,18 @@
-<h1>Vehicles#index</h1>
+<!-- <h1>Vehicles#index</h1>
 
 <% @vehicles.each do |vehicle| %>
 <br>
 	<%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> <%= link_to "Edit", edit_vehicle_path(vehicle), class: "btn btn-default" %> <%= link_to "Delete", vehicle_path(vehicle), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default" %>
-<% end %>
+<% end %> -->
+
+
+<div class="content">
+	<div class="col-md-12">
+		<h1 class="white-page-heading">Viewing All Vehicles in the </h1>
+		<h1 class="red-page-heading">Compatible Database</h1>
+		<div class="header-border"></div>
+	</div>
+	<div class="col-md-8 col-md-offset-2">
+		<%= render @vehicles %>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<%= simple_form_for @part do |f| %>
+	<% if @part.errors.any? %>
+		<div id="errors">
+			<h2><%= pluralize(@part.errors.count, "error") %> prevented this part from saving: </h2>
+			<ul>
+				<% @part.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.input :name, label: 'Part Description', placeholder: 'BE AS SPECIFIC AS POSSIBLE ie. clutch plates, front wheel bearings, etc', input_html: {class: 'form-control'} %>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<%= f.input :name, label: 'What does this fit?', input_html: {class: 'form-control'} %>
+		</div>
+		<div class="col-md-6">
+			<%= f.input :name, label: 'What is it originally from?', input_html: {class: 'form-control'} %>
+		</div>
+	</div><br>
+	<div class="form-group">
+		<%= f.input :comment, as: :text, input_html: {class: 'form-control'} %>
+	</div>
+	<div class="form-group">
+		<%= f.collection_radio_buttons :modifications, [[true, 'Yes'], [false, 'No']], :first, :last, inline_label: 'Are modifications required?',input_html: {class: 'form-control'} %>
+	</div>
+
+	<%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

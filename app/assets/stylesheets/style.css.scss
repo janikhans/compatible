@@ -168,8 +168,19 @@ a:focus {
     color: #F02525;
 }
 
+.header-positioning {
+        position: absolute;
+        padding-top: 305px;
+}
+
+.content {
+        padding-top: 100px;
+}
 
 @media(min-width:768px) {
+    .header-positioning {
+        position: absolute;
+    }
     .intro {
         height: 100%;
         padding: 0;
@@ -182,6 +193,10 @@ a:focus {
     .intro .intro-body .intro-what {
         margin: -15px;
         font-size: 35px;
+    }
+
+    .content {
+        padding-top: 150px;
     }
 }
 
@@ -222,17 +237,38 @@ a:focus {
     background-color: #42dca3;
 }
 
-.webdesigntuts-workshop:before,
-.webdesigntuts-workshop:after {
-    content: '';
-    display: block; 
-    height: 1px;
-    left: 50%;
-    margin: 0 0 0 -400px;
-    position: absolute;
-    width: 800px;
-}
-
 .red-heading {
     color: #F02525;
+}
+
+
+@media(min-width:767px) {
+    .white-page-heading {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 0px;
+    }
+    .red-page-heading {
+        color: #F02525;
+        text-align: center;
+        font-size: 75px;
+    }
+}
+
+.white-page-heading {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 0px;
+}
+
+.red-page-heading {
+    color: #F02525;
+    text-align: center;
+    font-size: 50px;
+}
+
+.header-border {
+    border-bottom: 1px solid #F02525;
+    margin-top: -35px;
+    margin-bottom: 30px;
 }
