@@ -1,0 +1,24 @@
+<%= simple_form_for @vehicle do |f| %>
+	<% if @vehicle.errors.any? %>
+		<div id="errors">
+			<h2><%= pluralize(@vehicle.errors.count, "error") %> prevented this Vehicle from saving: </h2>
+			<ul>
+				<% @vehicle.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.input :year, input_html: {class: 'form-control'} %>
+	</div>
+	<div class="form-group">
+		<%= f.input :make, input_html: {class: 'form-control'} %>
+	</div>
+	<div class="form-group">
+		<%= f.input :model, input_html: {class: 'form-control'} %>
+	</div>
+
+	<%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

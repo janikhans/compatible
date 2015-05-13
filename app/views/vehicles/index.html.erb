@@ -1,0 +1,6 @@
+<h1>Vehicles#index</h1>
+
+<% @vehicles.each do |vehicle| %>
+<br>
+	<%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> <%= link_to "Edit", edit_vehicle_path(vehicle), class: "btn btn-default" %> <%= link_to "Delete", vehicle_path(vehicle), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default" %>
+<% end %>
