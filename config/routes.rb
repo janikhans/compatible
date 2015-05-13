@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'parts/index'
+
+  get 'parts/show'
+
+  get 'parts/new'
+
+  get 'parts/edit'
+
   resources :vehicles
 
   devise_for :users
