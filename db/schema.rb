@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513032155) do
+ActiveRecord::Schema.define(version: 20150605050438) do
 
   create_table "parts", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20150513032155) do
   end
 
   add_index "parts", ["user_id"], name: "index_parts_on_user_id"
+
+  create_table "steps", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "part_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "steps", ["part_id"], name: "index_steps_on_part_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

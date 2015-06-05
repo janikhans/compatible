@@ -21,14 +21,10 @@
 		</div>
 		<div class="row">
 			<br>
-			<div class="ninja-heading">Steps Required (2)</div>
+			<div class="ninja-heading">Steps Required (<%= @part.steps.count %>)</div>
 			<div class="header-border"></div>
-			<br>
-			<div class="ninja-step-heading">Step 1</div>
-			<div class="ninja-outline">mumblecore Neutra heirloom. Bicycle rights Kickstarter hashtag chillwave readymade, gentrify taxidermy banh mi Banksy beard cold-pressed mlkshk. Carles single-origin coffee squid tattooed meditation iPhone four dollar toast, Williamsburg Wes Anderson. Freegan Godard cred aesthetic. Listicle blog butcher authentic.</div>
-			<br>
-			<div class="ninja-step-heading">Step 2</div>
-			<div class="ninja-outline">mumblecore Neutra heirloom. Bicycle rights Kickstarter hashtag chillwave readymade, gentrify taxidermy banh mi Banksy beard cold-pressed mlkshk. Carles single-origin coffee squid tattooed meditation iPhone four dollar toast, Williamsburg Wes Anderson. Freegan Godard cred aesthetic. Listicle blog butcher authentic.</div>
+			<%= render @part.steps %>
+			<%= render 'steps/form' %>
 		</div>
 	</div>
 </div>

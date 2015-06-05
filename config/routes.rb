@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :parts
+  resources :parts do
+    resources :steps
+  end
   resources :vehicles
   resources :users, only: [:show]
   root 'pages#home'
