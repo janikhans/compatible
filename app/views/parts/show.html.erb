@@ -1,2 +1,34 @@
-<h1>Parts#show</h1>
-<p>Find me in app/views/parts/show.html.erb</p>
+<div class="content">
+	<div class="col-md-12">
+		<h1 class="white-page-heading">Viewing Compatible Part</h1>
+		<h1 class="red-page-heading"><%= @part.name %></h1>
+		<div class="header-border"></div>
+	</div>
+	<div class="col-md-8 col-md-offset-2">
+		<div class="row">
+			<div class="ninja-heading">The Compatibilies</div>
+			<div class="ninja-outline part-less-padding">2006 Yamaha YZ250</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="ninja-heading">Comments</div>
+			<div class="ninja-outline"><%= @part.comment %></div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="ninja-heading">Modifications required?</div>
+			<div class="ninja-modifications"><%= @part.modifications %></div>
+		</div>
+		<div class="row">
+			<br>
+			<div class="ninja-heading">Steps Required (2)</div>
+			<div class="header-border"></div>
+			<br>
+			<div class="ninja-step-heading">Step 1</div>
+			<div class="ninja-outline">mumblecore Neutra heirloom. Bicycle rights Kickstarter hashtag chillwave readymade, gentrify taxidermy banh mi Banksy beard cold-pressed mlkshk. Carles single-origin coffee squid tattooed meditation iPhone four dollar toast, Williamsburg Wes Anderson. Freegan Godard cred aesthetic. Listicle blog butcher authentic.</div>
+			<br>
+			<div class="ninja-step-heading">Step 2</div>
+			<div class="ninja-outline">mumblecore Neutra heirloom. Bicycle rights Kickstarter hashtag chillwave readymade, gentrify taxidermy banh mi Banksy beard cold-pressed mlkshk. Carles single-origin coffee squid tattooed meditation iPhone four dollar toast, Williamsburg Wes Anderson. Freegan Godard cred aesthetic. Listicle blog butcher authentic.</div>
+		</div>
+	</div>
+</div>

@@ -272,3 +272,40 @@ a:focus {
     margin-top: -35px;
     margin-bottom: 30px;
 }
+
+.table-hover tbody tr:hover td {
+  background-color: black;
+}
+
+.ninja-outline {
+    width: 100%;
+    padding: 50px 20px;
+    border: solid 3px #1D1D1D;
+    border-radius: 10px;
+}
+
+.part-less-padding {
+    padding: 20px;
+}
+
+.ninja-heading {
+    text-transform: uppercase;
+    color: #F02525;
+    font-weight: bold;
+    font-size: 15px;
+    display:inline-block;
+}
+
+.ninja-step-heading{
+   text-transform: uppercase;
+    color: #F02525;
+    font-weight: bold;
+    font-size: 13px;
+    display:inline-block; 
+}
+.ninja-modifications{
+    float:right;
+    display:inline;
+    text-transform: uppercase;
+    font-weight:bold;
+}

@@ -4,11 +4,53 @@
 
 <div class="content">
 	<div class="col-md-12">
-		<h1 class="white-page-heading">Viewing all</h1>
-		<h1 class="red-page-heading">Compatible Parts</h1>
+		<h1 class="white-page-heading">Viewing all parts in the </h1>
+		<h1 class="red-page-heading">Parts Ninja Database</h1>
 		<div class="header-border"></div>
 	</div>
-	<div class="col-md-8 col-md-offset-2">		
-		<%= render @parts %>
+	<div class="col-md-8 col-md-offset-2">	
+		<table class="table table-hover">
+    		<thead>
+    			<tr>
+			        <th>Part Id</th>
+			        <th>Submitted By</th>
+			        <th>Part Name</th>
+			        <th>Modifications Required</th>
+			        <th>Created</th>
+			        <th>View</th>
+		      	</tr>
+    		</thead>
+    		<tbody>
+    			<%= render @parts %>
+			</tbody>
+  		</table>
+		
 	</div>
 </div>
+
+<!-- <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table> -->
