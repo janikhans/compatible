@@ -3,6 +3,6 @@
 	<td><%= link_to part.user.email, part.user %></td>
 	<td><%= part.name %></td>
 	<td><%= part.modifications %></td>
-	<td><%= time_ago_in_words(part.created_at) %></td>
-	<td><%= link_to 'View', part %></td>
+	<td><%= link_to 'View', part, class: "btn btn-default" %></td>
+	<td><%= link_to 'Delete', part, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-warning" %></td>
 </tr>

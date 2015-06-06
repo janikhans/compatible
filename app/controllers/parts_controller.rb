@@ -37,7 +37,7 @@ class PartsController < ApplicationController
 
   def destroy
   	@part.destroy
-  	redirect_to root_path
+  	redirect_to parts_path
   end
 
   private
@@ -47,6 +47,6 @@ class PartsController < ApplicationController
   end
 
   def part_params
-  	params.require(:part).permit(:name, :modifications, :comment)
+  	params.require(:part).permit(:name, :modifications, :comment, steps_attributes: [:id, :content, :_destroy])
   end
 end

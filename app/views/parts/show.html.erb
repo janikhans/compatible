@@ -19,12 +19,13 @@
 			<div class="ninja-heading">Modifications required?</div>
 			<div class="ninja-modifications"><%= @part.modifications %></div>
 		</div>
-		<div class="row">
-			<br>
-			<div class="ninja-heading">Steps Required (<%= @part.steps.count %>)</div>
-			<div class="header-border"></div>
-			<%= render @part.steps %>
-			<%= render 'steps/form' %>
-		</div>
+		<% if @part.modifications %>
+			<div class="row">
+				<br>
+				<div class="ninja-heading">Steps Required (<%= @part.steps.count %>)</div>
+				<div class="header-border"></div>
+				<%= render @part.steps %>
+			</div>
+		<% end %>
 	</div>
 </div>

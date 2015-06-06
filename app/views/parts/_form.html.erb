@@ -11,22 +11,31 @@
 	<% end %>
 
 	<div class="form-group">
-		<%= f.input :name, label: 'Part Description', placeholder: 'BE AS SPECIFIC AS POSSIBLE ie. clutch plates, front wheel bearings, etc', input_html: {class: 'form-control'} %>
+		<%= f.input :name, label: 'Part Description', placeholder: 'BE AS SPECIFIC AS POSSIBLE ie. clutch plates, front wheel bearings, etc', input_html: {class: 'form-control ninja-input'} %>
 	</div>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-6">
 			<%= f.input :name, label: 'What does this fit?', input_html: {class: 'form-control'} %>
 		</div>
 		<div class="col-md-6">
 			<%= f.input :name, label: 'What is it originally from?', input_html: {class: 'form-control'} %>
 		</div>
-	</div><br>
+	</div><br> -->
 	<div class="form-group">
-		<%= f.input :comment, as: :text, input_html: {class: 'form-control'} %>
+		<%= f.input :comment, as: :text, input_html: {class: 'form-control ninja-input'} %>
 	</div>
 	<div class="form-group">
-		<%= f.collection_radio_buttons :modifications, [[true, 'Yes'], [false, 'No']], :first, :last, inline_label: 'Are modifications required?',input_html: {class: 'form-control'} %>
+		Are Modifications Required?
+		<%= f.collection_radio_buttons :modifications, [[true, 'Yes'], [false, 'No']], :first, :last, {:item_wrapper_class => 'inline'}, input_html: {class: 'form-control'} %>
 	</div>
-
+		<div class="steps">
+			<%= f.simple_fields_for :steps do |step| %>
+				<%= render 'step_fields', f: step %>
+			<% end %>
+			<div class="links">
+				<%= link_to_add_association 'add step', f, :steps, class: "btn btn-default add-button" %>
+			</div>
+		</div>
+		<br>
 	<%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
