@@ -11,3 +11,12 @@ $(window).scroll(function() {
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+// Hides the notification flash
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#notice-wrapper').fadeOut("slow", function() {
+			$(this).remove();
+		})
+	}, 4500);
+});

@@ -9,12 +9,19 @@
 </head>
 <body data-target=".navbar-fixed-top">
 
+	<% if notice %>
+		<div id="notice-wrapper">
+			<p class="notice"><%= notice %></p>
+		</div>
+	<% elsif alert %>
+		<div id="notice_wrapper">
+			<p class="alert"><%= notice %></p>
+		</div>
+	<% end %>
+
 	<%= render 'layouts/navbar' %>
 	<%= render 'layouts/header' %>
 	<div class="container">
-		<% flash.each do |name, msg| %>
-			<%= content_tag(:div, msg, class:"alert alert-info") %>
-		<% end %>
 		<%= yield %>
 	</div>
 
