@@ -331,3 +331,34 @@ a:focus {
   border: solid 2px #909090;
   border-radius: 20px;
 }
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 91, 91, 0.3);
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #F02525;
+}
+
+footer ul {
+  float: left;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-right: 15px;
+}
+
+.social-icons {
+    float:right;
+}
