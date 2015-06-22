@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><title><%= full_title(yield(:title)) %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body data-target=".navbar-fixed-top">
+	<head>
+	  <title><%= full_title(yield(:title)) %></title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+		<%= render 'layouts/shim' %>
+	</head>
+	<body data-target=".navbar-fixed-top">
 
-	<% if notice %>
-		<div id="notice-wrapper">
-			<p class="notice"><%= notice %></p>
+		<% if notice %>
+			<div id="notice-wrapper">
+				<p class="notice"><%= notice %></p>
+			</div>
+		<% elsif alert %>
+			<div id="notice_wrapper">
+				<p class="alert"><%= notice %></p>
+			</div>
+		<% end %>
+
+		<%= render 'layouts/navbar' %>
+		<%= render 'layouts/header' %>
+		<div class="container">
+			<%= yield %>
 		</div>
-	<% elsif alert %>
-		<div id="notice_wrapper">
-			<p class="alert"><%= notice %></p>
-		</div>
-	<% end %>
-
-	<%= render 'layouts/navbar' %>
-	<%= render 'layouts/header' %>
-	<div class="container">
-		<%= yield %>
-	</div>
-	<%= render 'layouts/footer' %>
-
-</body>
+		<%= render 'layouts/footer' %>
+	</body>
 </html>
 
 
