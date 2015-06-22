@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   end
   resources :vehicles
   resources :users, only: [:show]
-  get 'pages/about'
-  get 'pages/blog'
-  get 'pages/contact'
-  get 'pages/help'
+  get 'about' => 'pages#about'
+  get 'blog' => 'pages#blog'
+  get 'contact' => 'pages#contact'
+  get 'help' => 'pages#help'
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
