@@ -167,6 +167,7 @@ a {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    z-index: -999;
 }
 
 .intro-what {
@@ -339,6 +340,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid $light-main;
   color: #777;
+  z-index: 9999;
 }
 
 footer a {
