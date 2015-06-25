@@ -27,7 +27,6 @@ body {
     top: 0;
     width: 100%;
     z-index: 9999;
-    background: rgba(234, 136, 136, 0.9);
     .alert, .notice {
         padding: 2.5rem 0;
         text-align: center;
@@ -36,6 +35,12 @@ body {
         font-weight: 700;
         color: #FFFFFF;
         letter-spacing: 1px;
+    }
+    .alert {
+        background: rgba(234, 136, 136, 0.9);
+    }
+    .notice {
+        background: rgba(52, 152, 219, 0.9);
     }
 }
 
@@ -63,6 +68,18 @@ p {
     line-height: 1.5;
 }
 
+.dropdown-menu {
+    background-color: #2c2c2c;
+    border: 1px solid $light-main;
+    border-top: 0;
+    li a {
+        color:white;
+    }
+}
+.dropdown-header {
+    color: white;
+}
+
 @media(min-width:768px) {
     p {
         margin: 0 0 35px;
@@ -84,6 +101,9 @@ a {
 
 .light {
     font-weight: 400;
+}
+.nav .open > a {
+    background-color: $light-main;
 }
 
 .navbar-custom {
