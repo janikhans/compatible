@@ -1,0 +1,41 @@
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				  <div class="form-inputs">
+				    <%= f.input :email, required: false, autofocus: true %>
+				    <%= f.input :username %>
+				    <%= f.input :password, required: false %>
+				    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+				  </div>
+
+				  <div class="form-actions">
+				    <%= f.button :submit, "Sign In", class:"btn-default btn-lg btn-block mrg-btm-10"  %>
+				  </div>
+				<% end %>
+
+				<%= link_to '<i class="fa fa-play-circle"></i> Sign In'.html_safe, new_session_path(resource_name), class:"btn-default btn-lg btn-block mrg-btm-10" %> 
+                     <small><%= link_to "Forgot your password?", new_password_path(resource_name) %></small>
+                  </div>
+                  <%= link_to '<i class="fa fa-lg fa-gears"></i> Do you need to register?'.html_safe, new_user_registration_path(resource_name), class:"facebook" %> 
+
+                  <div class="content">
+	<div class="col-md-12">
+		<h1 class="white-page-heading">So you want to become a parts ninja?</h1>
+		<h1 class="red-page-heading">Bow down to the sensei</h1>
+		<div class="header-border"></div>
+	</div>
+	<div class="col-md-8 col-md-offset-2">
+			<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+			  <div class="form-inputs">
+			    <%= f.input :email, required: true, autofocus: true %>
+			    <%= f.input :username %>
+			    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+			    <%= f.input :password_confirmation, required: true %>
+			  </div>
+
+			  <div class="form-actions">
+			    <%= f.button :submit, "Sign up" %>
+			  </div>
+			<% end %>
+
+			<%= render "devise/shared/links" %>
+	</div>
+</div>

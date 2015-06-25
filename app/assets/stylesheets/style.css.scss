@@ -89,7 +89,7 @@ p {
 }
 
 a {
-    color: #42dca3;
+    color: #light-main;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -269,17 +269,17 @@ a {
 }
 
 .btn-default {
-    border: 1px solid #42dca3;
-    color: #42dca3;
+    border: 1px solid $light-main;
+    color: $light-main;
     background-color: transparent;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #42dca3;
+    border: 1px solid $light-main;
     outline: 0;
     color: #000;
-    background-color: #42dca3;
+    background-color: $light-main;
 }
 
 .red-heading {
@@ -405,4 +405,75 @@ footer ul li {
 
 .round {
     border-radius: 50%;
+}
+
+
+/*-- Common Use Classes --*/
+.list-block {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+.list-block ul {
+    display: table-row;
+}
+.list-block li {
+    display: table-cell;
+    margin: 0;
+}
+.pad-left-0 {
+    padding-left: 0px;
+}
+.pad-right-0 {
+    padding-right: 0px;
+}
+.mrg-btm-10 {
+    margin-bottom: 10px;
+}
+.mrg-btm-20 {
+    margin-bottom: 20px;
+}
+.mrg-btm-0 {
+    margin-bottom: 0px;
+}
+
+#login-widget {
+    .panel {
+        border: 0;
+        background-color: rgba(61, 61, 61, 0.85);
+        -webkit-box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.75);
+        box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.75);
+    }
+    .panel-body, .input-group {
+        margin-bottom: 15px;
+    }
+    .panel-footer {
+        padding: 0px;
+        border: none;
+        background-color: transparent;
+        .login-btn {
+            padding: 20px 20px 10px 20px;
+            .btn {
+                border-radius: 6px !important;
+            }
+        }
+        .register {
+            background-color: #5F90B0;
+            color: #fff;
+            padding: 15px;
+            display: block;
+        }
+    }
+}
+
+/*-- Forms --*/
+
+.dark-input {
+    background-color: rgba(0, 0, 0, 0.33);
+    border: 1px solid rgba(0, 0, 0, 0.57);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.6);
 }
