@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  
   resources :parts do
     resources :steps
   end
+
   resources :vehicles
+
   resources :users, only: [:show]
+
   get 'about' => 'pages#about'
   get 'blog' => 'pages#blog'
   get 'contact' => 'pages#contact'
   get 'help' => 'pages#help'
+
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

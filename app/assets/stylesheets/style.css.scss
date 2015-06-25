@@ -4,8 +4,9 @@
 
 /* mixins, variables, etc. */
 
-$main-color: #F02525;
-$light-main: rgba(255, 91, 91, 0.9);
+$main-color: #3498db;
+$light-main: #3498db;
+/*$light-main: rgba(255, 91, 91, 0.9);*/
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -380,4 +381,8 @@ footer ul li {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+.round {
+    border-radius: 50%;
 }
