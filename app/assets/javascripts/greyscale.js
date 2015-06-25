@@ -21,7 +21,7 @@ $(document).ready(function(){
 	}, 4500);
 });
 
-$().alert('close');
+
 
 $(document).ready(function(){
     $(".dropdown").hover(            
