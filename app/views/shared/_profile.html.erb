@@ -1,0 +1,53 @@
+<div class="col-md-3">
+	<div class="profile-sidebar ninja-panel">
+		<!-- SIDEBAR USERPIC -->
+		<div class="profile-userpic">
+			<%= gravatar_for @user %>
+		</div>
+		<!-- END SIDEBAR USERPIC -->
+		<!-- SIDEBAR USER TITLE -->
+		<div class="profile-usertitle">
+			<div class="profile-usertitle-name">
+				<%= @user.username %>
+			</div>
+			<div class="profile-usertitle-job">
+				Padawan
+			</div>
+		</div>
+		<!-- END SIDEBAR USER TITLE -->
+		<!-- SIDEBAR BUTTONS -->
+		<div class="profile-userbuttons">
+			<button type="button" class="btn btn-default btn-lg">Follow</button>
+			<button type="button" class="btn btn-default btn-lg">Message</button>
+		</div>
+		<!-- END SIDEBAR BUTTONS -->
+		<!-- SIDEBAR MENU -->
+		<div class="profile-usermenu">
+			<ul class="nav">
+				<li class="active">
+					<%= link_to @user do %>
+						<i class="fa fa-5x fa-home"></i> Overview
+					<% end %>
+				</li>
+				<% if current_user == @user %>
+					<li>
+						<%= link_to edit_user_registration_path(current_user) do %>
+							<i class="fa fa-5x fa-user"></i> Account Settings
+						<% end %>
+					</li>
+				<% end %>
+				<li>
+						<%= link_to '#' do %>
+							<i class="fa fa-5x fa-flash"></i> Tasks
+						<% end %>
+					</li>
+				<li>
+						<%= link_to '#' do %>
+							<i class="fa fa-5x fa-motorcycle"></i> Foo
+						<% end %>
+					</li>
+			</ul>
+		</div>
+		<!-- END MENU -->
+	</div>
+</div>

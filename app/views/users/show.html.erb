@@ -2,15 +2,15 @@
 
 <div class="content">
 	<div class="col-md-12">
-		<h1 class="white-page-heading"><% if current_user == @user %> Viewing your Profile <% else %>Viewing The Profile Of <% end %></h1>
-		<h1 class="red-page-heading"><%= gravatar_for @user %><%= @user.username %></h1>
+		<h1 class="white-page-heading"><% if current_user == @user %> Viewing your Profile <% else %>Viewing Profile Of <% end %></h1>
+		<h1 class="red-page-heading"><%= @user.username %></h1>
 		<div class="header-border"></div>
 	</div>
-	<div class="col-md-8 col-md-offset-2">
-		<div class="row">
-			<div class="ninja-heading"><%= @user.username %>'s Email</div>
-			<div class="ninja-outline part-less-padding"><%= @user.email %>
-			</div>
+	<div class="row profile">
+		<%= render 'shared/profile' %>
+		<div class="col-md-9">
+            <div class="profile-content ninja-panel">			   
+            </div>
 		</div>
 	</div>
 </div>

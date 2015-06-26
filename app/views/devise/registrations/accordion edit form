@@ -1,0 +1,46 @@
+<div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Email"><span class="glyphicon glyphicon-file">
+                            </span> Email</a>
+                        </h4>
+                    </div>
+                    <div id="Email" class="panel-collapse collapse in">
+                      Your current email is: <%= @user.email %>
+                      <%= f.input :email, required:false, label: false, placeholder: 'Email', input_html: { class: 'form-control input-lg dark-input'  } %>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Username"><span class="glyphicon glyphicon-th-list">
+                            </span> Username</a>
+                        </h4>
+                    </div>
+                    <div id="Username" class="panel-collapse collapse">
+                      Your current username is: <%= @user.username %>
+                      <%= f.input :username, required: false, label: false, placeholder: 'Username', input_html: { class: 'form-control input-lg dark-input'  } %>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#password"><span class="glyphicon glyphicon-th-list">
+                            </span> Password</a>
+                        </h4>
+                    </div>
+                    <div id="password" class="panel-collapse collapse">
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                  <% end %>
+
+                  <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", placeholder: 'New Password', label: false, required: false, input_html: { class: 'form-control input-lg dark-input'  } %>
+                  <%= f.input :password_confirmation, required: false, placeholder: 'New Password Confirmation', label: false, input_html: { class: 'form-control input-lg dark-input'  } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
