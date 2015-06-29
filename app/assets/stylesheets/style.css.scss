@@ -437,6 +437,12 @@ footer ul li {
 .mrg-btm-0 {
     margin-bottom: 0px;
 }
+.mrg-top-20 {
+    margin-top: 20px;
+}
+.pad-20 {
+    padding:20px;
+}
 
 #login-widget {   
     .panel-body, .input-group {
@@ -605,9 +611,20 @@ footer ul li {
   color: #737373;
 }
 
-.profile-header {
+.form-header {
       display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+.info-popup {
+    padding: 0px;
+    .badge {
+        background-color: $light-main;
+    }
+}
+
+.popover {
+    background-color: black;
 }

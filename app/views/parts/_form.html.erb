@@ -9,33 +9,24 @@
 			</ul>
 		</div>
 	<% end %>
-
-	<div class="form-group">
-		<%= f.input :name, label: 'Part Description', placeholder: 'BE AS SPECIFIC AS POSSIBLE ie. clutch plates, front wheel bearings, etc', input_html: {class: 'form-control ninja-input'} %>
-	</div>
-	<!-- <div class="row">
-		<div class="col-md-6">
-			<%= f.input :name, label: 'What does this fit?', input_html: {class: 'form-control'} %>
-		</div>
-		<div class="col-md-6">
-			<%= f.input :name, label: 'What is it originally from?', input_html: {class: 'form-control'} %>
-		</div>
-	</div><br> -->
-	<div class="form-group">
-		<%= f.input :comment, as: :text, input_html: {class: 'form-control ninja-input'} %>
-	</div>
-	<div class="form-group">
-		Are Modifications Required?
-		<%= f.collection_radio_buttons :modifications, [[true, 'Yes'], [false, 'No']], :first, :last, {:item_wrapper_class => 'inline'}, input_html: {class: 'form-control'} %>
-	</div>
-		<div class="steps">
-			<%= f.simple_fields_for :steps do |step| %>
-				<%= render 'step_fields', f: step %>
-			<% end %>
-			<div class="links">
-				<%= link_to_add_association 'add step', f, :steps, class: "btn btn-default add-button" %>
-			</div>
-		</div>
-		<br>
-	<%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
+
+		<div class="ninja-panel pad-20">	
+			<%= simple_form_for @part do |f| %>
+				<h2 class="text-center">Describe the original part <a tabindex="0" class="btn btn-lg info-popup" role="button" data-toggle="popover" data-trigger="focus" title="What is being replaced?" data-content="Who originally made the part? What part is it? What model vehicle did it belong to?"><span class="badge"><i class="fa fa-question"></span></i></a></h2>
+				<div class="row">
+					<div class="col-lg-6"><div class="form-header">Manufacturer</div><%= f.input :name, required: false, label: false, placeholder: 'Manufacturer', input_html: { class: 'form-control input-lg dark-input'  } %></div>
+					<div class="col-md-6"><div class="form-header">Description</div><%= f.input :name, required: false, label: false, placeholder: 'Description', input_html: { class: 'form-control input-lg dark-input'  } %></div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4"><div class="form-header">Part #</div><%= f.input :name, required: false, label: false, placeholder: 'Part #', input_html: { class: 'form-control input-lg dark-input'  } %></div>
+					<div class="col-lg-8"><div class="form-header">OEM Model</div><%= f.input :name, required: false, label: false, placeholder: 'OEM Model', input_html: { class: 'form-control input-lg dark-input'  } %> <div class="pull-right"> <%= f.button :submit, "+ Add Model" %></div></div>
+
+				</div>
+		</div>
+		<div class="col-md-4 col-md-offset-4">
+				<div class="ninja-panel mrg-top-20 pad-20 text-center">
+		                  <%= f.button :submit, "Create Compatibility" %>
+					<% end %>
+				</div>
+		</div>
