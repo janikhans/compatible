@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   
   resources :parts do
     resources :steps
+    member do
+      post :fitment
+    end
   end
 
   resources :vehicles

@@ -41,7 +41,7 @@
 <div class="content">
 	<div class="col-md-12">
 		<h1 class="white-page-heading">Viewing Compatible Part</h1>
-		<h1 class="red-page-heading"><%= @part.part_number %></h1>
+		<h1 class="red-page-heading"><%= @part.manufacturer %> <%= @part.description %></h1>
 		<div class="header-border"></div>
 	</div>
 	<div class="col-md-10 col-md-offset-1">	
@@ -51,22 +51,34 @@
 				<div class="col-md-4"><div class="form-header">Description:</div> <%= @part.description %></div>
 				<div class="col-md-4"><div class="form-header">Part Number:</div> <%= @part.part_number %></div>
 			</div>
-		</div>
-	</div>
-	<% if @part.vehicles %>
-	<div class="col-md-10 col-md-offset-1">	
-		<div class="red-page-heading mrg-top-20">	
-			<div class="row">
-				<h2 class="text-center">This part fits the following models:</h2>
-			</div>
-		</div>
-		<% @part.vehicles.each do |vehicle| %>
-			<%= link_to vehicle do %>
-				<div class="ninja-panel pad-20 mrg-top-20 white-page-heading vehicle-box">	
-					<%= vehicle.year %> <%= vehicle.make %> <%=vehicle.model %>
+			<% if @part.vehicles %>
+				<div class="row mrg-top-20">
+					<div class="col-md-12">		
+						<div class="well dark-well">
+							<div class="row">
+								<h4 class="text-center mrg-btm-10">This part was designed for the following models:</h2>
+							</div>
+							<% @part.oemfitments.each do |oemfitment| %>
+								<%= link_to oemfitment.vehicle do %>
+									<div class="">	
+										<%= oemfitment.vehicle.year %> <%= oemfitment.vehicle.make %> <%=oemfitment.vehicle.model %>
+								<% end %>
+										<%= link_to oemfitment.user.username, oemfitment.user, class: "floatright" %>
+									</div>
+							<% end %>
+						</div>
+					</div>
 				</div>
 			<% end %>
-		<% end %>
+			<h6 class="mrg-btm-0">Was this part designed for another vehicle or model?</h6>
+			<%= form_tag fitment_part_path do %>
+				<%= number_field(:vehicle, :year, class: 'dark-input', placeholder: ' Year') %>
+				<%= text_field(:vehicle, :make, class: 'dark-input', placeholder: ' Make') %>
+				<%= text_field(:vehicle, :model, class: 'dark-input', placeholder: ' Model') %>
+				<%= submit_tag "Add Vehicle", class: 'form-button btn btn-default'  %>
+			<% end %>
+		</div>
 	</div>
-	<% end %>
 </div>
+
+	

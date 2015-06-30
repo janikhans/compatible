@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
 
-	before_action :set_part, only: [:show, :edit, :destroy]
+	before_action :set_part, only: [:show, :edit, :destroy, :fitment]
   	before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -40,6 +40,21 @@ class PartsController < ApplicationController
   	redirect_to parts_path
   end
 
+  def fitment
+    @make = params[:vehicle][:make].upcase
+    @model = params[:vehicle][:model].upcase
+    @year = params[:vehicle][:year]
+    @vehicle = Vehicle.where(:make => @make, :model => @model, :year => @year).first_or_create
+    @oemfitment = current_user.oemfitments.build(:part_id =>@part.id, :vehicle_id => @vehicle.id)
+
+    if @oemfitment.save
+      redirect_to @part, notice: "New oem model has been saved"
+    else
+      render 'show'
+      # redirect_to @part, alert: "Didn't save for some reason" #Temporary fix 
+    end
+  end
+
   private
 
   def set_part
@@ -49,4 +64,6 @@ class PartsController < ApplicationController
   def part_params
   	params.require(:part).permit(:manufacturer, :description, :part_number, :comment, steps_attributes: [:id, :content, :_destroy])
   end
+
+
 end
