@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629043100) do
+ActiveRecord::Schema.define(version: 20150630235530) do
+
+  create_table "discoveries", force: :cascade do |t|
+    t.integer  "part_id"
+    t.integer  "oem_id"
+    t.integer  "compatible_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.boolean  "modifications", default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "discoveries", ["compatible_id"], name: "index_discoveries_on_compatible_id"
+  add_index "discoveries", ["part_id"], name: "index_discoveries_on_part_id"
+  add_index "discoveries", ["user_id"], name: "index_discoveries_on_user_id"
 
   create_table "oemfitments", force: :cascade do |t|
     t.integer  "vehicle_id"
