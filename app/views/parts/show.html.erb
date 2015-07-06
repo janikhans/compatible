@@ -51,12 +51,12 @@
 				<div class="col-md-4"><div class="form-header">Description:</div> <%= @part.description %></div>
 				<div class="col-md-4"><div class="form-header">Part Number:</div> <%= @part.part_number %></div>
 			</div>
-			<% if @part.vehicles %>
+			<% unless @part.vehicles.count == 0 %>
 				<div class="row mrg-top-20">
 					<div class="col-md-12">		
+						<h4 class="text-center mrg-btm-10">This part was designed for the following models:</h4>
 						<div class="well dark-well">
-							<div class="row">
-								<h4 class="text-center mrg-btm-10">This part was designed for the following models:</h2>
+							<div class="row">								
 							</div>
 							<% @part.oemfitments.each do |oemfitment| %>
 								<%= link_to oemfitment.vehicle do %>
@@ -70,14 +70,34 @@
 					</div>
 				</div>
 			<% end %>
-			<h6 class="mrg-btm-0">Was this part designed for another vehicle or model?</h6>
+			<h6 class="mrg-btm-10">Was this part designed for another vehicle or model?</h6>
 			<%= form_tag fitment_part_path do %>
-				<%= number_field(:vehicle, :year, class: 'dark-input', placeholder: ' Year') %>
-				<%= text_field(:vehicle, :make, class: 'dark-input', placeholder: ' Make') %>
-				<%= text_field(:vehicle, :model, class: 'dark-input', placeholder: ' Model') %>
-				<%= submit_tag "Add Vehicle", class: 'form-button btn btn-default'  %>
+				<div class="col-md-3"><%= number_field(:vehicle, :year, class: 'input-lg dark-input fit', placeholder: ' Year') %></div>
+				<div class="col-md-4"><%= text_field(:vehicle, :make, class: 'input-lg dark-input fit', placeholder: ' Make') %></div>
+				<div class="col-md-3"><%= text_field(:vehicle, :model, class: 'input-lg dark-input fit', placeholder: ' Model') %></div>
+				<div class="cold-md-1"><%= submit_tag "Add Vehicle", class: 'form-button btn btn-default'  %></div>	
 			<% end %>
 		</div>
+		<% unless @part.discoveries.count == 0 %>
+			<div class="ninja-panel pad-20 mrg-top-20">
+				<h4 class="text-center mrg-btm-10">This part is compatible between the following models:</h4>
+					<% @part.discoveries.each do |discovery| %>
+								<%= link_to discovery do %>
+									<div class="well dark-well pad-btm-35">
+										<div class="col-md-5">	
+											<%= discovery.compatible.year %> <%= discovery.compatible.make %> <%=discovery.compatible.model %>
+										</div>
+										<div class="col-md-2 text-center">
+											AND
+										</div>
+										<div class="col-md-5 text-right">
+											<%= discovery.oem.year %> <%= discovery.oem.make %> <%= discovery.oem.model %>
+										</div>
+									</div>
+								<% end %>
+					<% end %>
+			</div>
+		<% end %>
 	</div>
 </div>
 

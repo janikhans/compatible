@@ -1,0 +1,36 @@
+<div class="content">
+	<div class="col-md-12">
+		<h1 class="white-page-heading">Viewing Discovery</h1>
+		<h1 class="red-page-heading">Stuff</h1>
+		<div class="header-border"></div>
+	</div>
+	<div class="col-md-10 col-md-offset-1">	
+		<div class="ninja-panel pad-20">	
+				<h5>This Part:</h5><p>
+				<div class="col-md-4"><div class="form-header">Manufacturer:</div> <%= @discovery.part.manufacturer %></div>
+				<div class="col-md-4"><div class="form-header">Description:</div> <%= @discovery.part.description %></div>
+				<div class="col-md-4"><div class="form-header">Part Number:</div> <%= @discovery.part.part_number %></div>
+				<div class="text-right"><%= link_to "View Part", @discovery.part, class: "btn btn-default btn-sm" %></div> 
+		</div>
+			<div class="ninja-panel pad-20 mrg-top-20">
+				<h5>From this vehicle:</h5>
+				<div class="col-md-4"><div class="form-header">Year:</div> <%= @discovery.oem.year %></div>
+				<div class="col-md-4"><div class="form-header">Manufacturer:</div> <%= @discovery.oem.make %></div>
+				<div class="col-md-4"><div class="form-header">Model:</div> <%= @discovery.oem.model %></div>
+			</div>
+			<div class="ninja-panel pad-20 mrg-top-20">
+				<h5>Fits this vehicle:</h5>
+				<div class="col-md-3"><div class="form-header">Part Number:</div> <%= @discovery.compatible.year %></div>
+				<div class="col-md-3"><div class="form-header">Manufacturer:</div> <%= @discovery.compatible.make %></div>
+				<div class="col-md-3"><div class="form-header">Description:</div> <%= @discovery.compatible.model %></div>
+				<div class="col-md-3"><div class="form-header">What It Replaces</div> <%= @discovery.replaces %></div>
+			</div>
+			<div class="ninja-panel pad-20 mrg-top-20">
+				<h5>Additional Information</h5>
+				<div class="col-md-4"><div class="form-header">Comments:</div> <%= @discovery.comment %></div>
+				<div class="col-md-4"><div class="form-header">Are Mods Required?</div> <%= @discovery.modifications %></div>
+				<div class="col-md-4"><div class="form-header">Discovered By:</div> <%= @discovery.user.username %></div>
+			</div>
+		</div>
+	</div>
+</div>

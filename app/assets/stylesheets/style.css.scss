@@ -444,6 +444,10 @@ footer ul li {
     padding:20px;
 }
 
+.pad-btm-35 {
+  padding-bottom: 35px;
+}
+
 #login-widget {   
     .panel-body, .input-group {
         margin-bottom: 15px;
@@ -644,7 +648,6 @@ footer ul li {
   border: 0px;
   webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.5);
-
 }
 
 .floatright {
@@ -653,4 +656,8 @@ footer ul li {
 
 .special-input {
   color:black;
+}
+
+.fit {
+  width:100%;
 }

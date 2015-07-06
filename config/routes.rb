@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :vehicles
+  resources :discoveries
 
   resources :users, only: [:show]
 

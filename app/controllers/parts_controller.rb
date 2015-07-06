@@ -44,8 +44,8 @@ class PartsController < ApplicationController
     @make = params[:vehicle][:make].upcase
     @model = params[:vehicle][:model].upcase
     @year = params[:vehicle][:year]
-    @vehicle = Vehicle.where(:make => @make, :model => @model, :year => @year).first_or_create
-    @oemfitment = current_user.oemfitments.build(:part_id =>@part.id, :vehicle_id => @vehicle.id)
+    @vehicle = Vehicle.where(make: @make, model: @model, year: @year).first_or_create
+    @oemfitment = current_user.oemfitments.build(part: @part, vehicle: @vehicle)
 
     if @oemfitment.save
       redirect_to @part, notice: "New oem model has been saved"

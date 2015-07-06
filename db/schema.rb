@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630235530) do
+ActiveRecord::Schema.define(version: 20150702055802) do
 
   create_table "discoveries", force: :cascade do |t|
     t.integer  "part_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150630235530) do
     t.boolean  "modifications", default: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "replaces"
   end
 
   add_index "discoveries", ["compatible_id"], name: "index_discoveries_on_compatible_id"

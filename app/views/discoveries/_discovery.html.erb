@@ -1,0 +1,9 @@
+<tr>
+	<td><%= discovery.id %></td>
+	<td><%= link_to discovery.user.username, discovery.user %></td>
+	<td><%= discovery.oem.year %> <%= discovery.oem.make %> <%= discovery.oem.model %></td>
+	<td><%= discovery.compatible.year %> <%= discovery.compatible.make %> <%= discovery.compatible.model %></td>
+	<td><%= discovery.replaces %></td>
+	<td><%= link_to 'View', discovery, class: "btn btn-default" %></td>
+	<td><%= link_to 'Delete', discovery, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-warning" %></td>
+</tr>

@@ -1,0 +1,27 @@
+
+
+<div class="content">
+	<div class="col-md-12">
+		<h1 class="white-page-heading">Viewing All Discoveries in the </h1>
+		<h1 class="red-page-heading">Parts Ninja Database</h1>
+		<div class="header-border"></div>
+	</div>
+	<div class="col-md-8 col-md-offset-2">	
+		<table class="table table-hover">
+    		<thead>
+    			<tr>
+			        <th>Discovery Id</th>
+			        <th>Submitted By</th>
+			        <th>OEM Vehicle</th>
+			        <th>Compatible Vehicle</th>
+			        <th>Replaces</th>
+			        <th>View</th>
+              		<th>Delete</th>
+		      	</tr>
+    		</thead>
+    		<tbody>
+    			<%= render @discoveries %>
+			</tbody>
+  		</table>
+	</div>
+</div>
