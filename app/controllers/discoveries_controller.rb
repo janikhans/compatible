@@ -7,6 +7,7 @@ class DiscoveriesController < ApplicationController
 	end
 
 	def show
+		@steps = @discovery.steps
 	end
 
 	def new
@@ -65,7 +66,8 @@ class DiscoveriesController < ApplicationController
 	  end
 
 		def discovery_params
-			params.require(:discovery).permit(:comment, :replaces, :modifications)
+			params.require(:discovery).permit(:replaces, :comments, :modifications, steps_attributes: [:id, :content, :_destroy])
+		# 	params.require(:discovery).permit(:comment, :modifications, steps_attributes: [:id, :content, :_destroy])
 		end
 	
 		def edit_discovery_params

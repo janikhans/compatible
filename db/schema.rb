@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702055802) do
+ActiveRecord::Schema.define(version: 20150707063858) do
 
   create_table "discoveries", force: :cascade do |t|
     t.integer  "part_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150702055802) do
   add_index "parts", ["user_id"], name: "index_parts_on_user_id"
 
   create_table "steps", force: :cascade do |t|
-    t.text     "content"
+    t.string   "content"
     t.integer  "discovery_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false

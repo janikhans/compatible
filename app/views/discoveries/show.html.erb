@@ -31,6 +31,13 @@
 				<div class="col-md-4"><div class="form-header">Are Mods Required?</div> <%= @discovery.modifications %></div>
 				<div class="col-md-4"><div class="form-header">Discovered By:</div> <%= @discovery.user.username %></div>
 			</div>
+			<% unless @steps.count == 0 %>
+			<div class="ninja-panel pad-20 mrg-top-20">
+				<div class="ninja-heading">Steps Required (<%= @steps.count %>)</div>
+				<div class="header-border"></div>
+				<%= render @steps %>
+			</div>
+			<% end %>
 		</div>
 	</div>
 </div>
