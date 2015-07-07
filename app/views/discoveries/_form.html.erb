@@ -16,7 +16,7 @@
 				<div class="col-md-6"><p>Part</p>
 					<%= text_field(:part, :manufacturer, class: 'input-sm dark-input', placeholder: ' Manufacturer') %>
 					<%= text_field(:part, :name, class: 'input-sm dark-input', placeholder: ' Name') %>
-    				<div class="form-header">Are modifications required?</div><%= f.input :modifications, label: false, as: :boolean %>
+    				<div class="form-header">Are modifications required?</div><%= f.check_box :modifications, label: false, as: :boolean, :data => { :size=>'small', 'on-text'=>'Yes', 'off-text'=>'No' } %>
     				</div>
 				<div class="col-md-6"><p>Oem Vehicle</p>
 					<%= number_field(:oem_vehicle, :year, class: 'input-sm dark-input', placeholder: ' Year') %>

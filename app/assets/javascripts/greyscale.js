@@ -39,3 +39,8 @@ $(document).ready(function(){
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
+
+
+  $(document).ready(function() {
+    $('input:checkbox').bootstrapSwitch();
+  });

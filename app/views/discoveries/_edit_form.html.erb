@@ -1,5 +1,5 @@
+<%= simple_form_for @discovery do |f| %>
 <div class="ninja-panel pad-20">	
-	<%= simple_form_for @discovery do |f| %>
 		<h2 class="text-center">Describe the discovery <a tabindex="0" class="btn btn-lg info-popup" role="button" data-toggle="popover" data-trigger="focus" title="What is being replaced?" data-content="Who originally made the discovery? What discovery is it? What model vehicle did it belong to?"><span class="badge"><i class="fa fa-question"></span></i></a></h2>
 		<% if @discovery.errors.any? %>
 			<div id="errors">
@@ -11,16 +11,27 @@
 				</ul>
 			</div>
 		<% end %>
-		<div class="row">
+		<div class="row">	
 			<div class="form-inputs">
-				<div class="col-lg-12"><div class="form-header">Comment</div><%= f.input :comment, required: false, label: false, placeholder: 'Comment', input_html: { class: 'form-control input-lg dark-input'  } %><div class="form-header">Replaces</div><%= f.input :replaces, required: false, label: false, placeholder: 'Replaces', input_html: { class: 'form-control input-lg dark-input'  } %></div>
-				<div class="form-header">Are modifications required?</div><%= f.input :modifications, label: false, as: :boolean %>
+				<div class="col-lg-12"><div class="form-header">Comment</div><%= f.input :comment, required: false, label: false, placeholder: 'Do you have any noteworthy comments to add?', input_html: { class: 'form-control input-lg dark-input'  } %><div class="form-header">Replaces</div><%= f.input :replaces, required: false, label: false, placeholder: 'What parts are compatible? i.e. Wheel Bearings, chain guide, clutch plates', input_html: { class: 'form-control input-lg dark-input'  } %><div class="form-header">Are modifications required?</div><%= f.input :modifications, label: false, as: :boolean %>
+			</div>
 			</div>
 		</div>
 </div>
-<div class="col-md-4 col-md-offset-4">
-		<div class="ninja-panel mrg-top-20 pad-20 text-center">
-                  <%= f.button :submit, "Update Discovery" %>
-	<% end %>
+<div class="ninja-panel pad-20 mrg-top-20">
+	<h3>Steps </h3>
+		<div id="steps">
+			<%= f.simple_fields_for(:steps) do |step| %>
+				<%= render 'step_fields', :f => step %>
+			<% end %>
+				<div class="links">
+					<%= link_to_add_association 'Add Step', f, :steps %>
+				</div>
 		</div>
 </div>
+<div class="col-md-4 col-md-offset-4">
+	<div class="ninja-panel mrg-top-20 pad-20 text-center">
+    <%= f.button :submit, "Update Discovery" %>
+	</div>
+</div>
+<% end %>
