@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150702055802) do
 
   create_table "parts", force: :cascade do |t|
     t.string   "manufacturer"
+    t.string   "name"
     t.string   "description"
     t.string   "part_number"
     t.integer  "user_id"
@@ -50,12 +51,12 @@ ActiveRecord::Schema.define(version: 20150702055802) do
 
   create_table "steps", force: :cascade do |t|
     t.text     "content"
-    t.integer  "part_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "discovery_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  add_index "steps", ["part_id"], name: "index_steps_on_part_id"
+  add_index "steps", ["discovery_id"], name: "index_steps_on_discovery_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

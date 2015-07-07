@@ -16,9 +16,10 @@
 		<h2 class="text-center">Describe the original part <a tabindex="0" class="btn btn-lg info-popup" role="button" data-toggle="popover" data-trigger="focus" title="What is being replaced?" data-content="Who originally made the part? What part is it? What model vehicle did it belong to?"><span class="badge"><i class="fa fa-question"></span></i></a></h2>
 		<div class="row">
 			<div class="col-lg-6"><div class="form-header">Manufacturer</div><%= f.input :manufacturer, required: false, label: false, placeholder: 'Manufacturer', input_html: { class: 'form-control input-lg dark-input'  } %></div>
-			<div class="col-md-6"><div class="form-header">Description</div><%= f.input :description, required: false, label: false, placeholder: 'Description', input_html: { class: 'form-control input-lg dark-input'  } %></div>
+			<div class="col-md-6"><div class="form-header">Part Name</div><%= f.input :name, required: false, label: false, placeholder: 'Description', input_html: { class: 'form-control input-lg dark-input'  } %></div>
 		</div>
 		<div class="row">
+			<div class="col-lg-8"><div class="form-header">Description</div><%= f.input :description, as: :text, required: false, label: false, placeholder: 'Description', input_html: { class: 'form-control input-lg dark-input'  } %></div>
 			<div class="col-lg-4"><div class="form-header">Part #</div><%= f.input :part_number, required: false, label: false, placeholder: 'Part #', input_html: { class: 'form-control input-lg dark-input'  } %></div>
 		</div>
 </div>

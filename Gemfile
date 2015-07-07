@@ -15,7 +15,6 @@ gem 'simple_form'
 gem 'devise'
 gem 'aws-sdk', 							'< 2.0'
 gem 'paperclip', 						'~> 4.2'
-gem 'masonry-rails'
 gem 'acts_as_votable', 			'~> 0.10.0'
 gem 'font-awesome-rails'
 gem "cocoon"

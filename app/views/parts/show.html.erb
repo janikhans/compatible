@@ -1,56 +1,16 @@
-<!-- <div class="content">
-	<div class="col-md-12">
-		<h1 class="white-page-heading">Viewing Compatible Part</h1>
-		<h1 class="red-page-heading"><%= @part.part_number %></h1>
-		<div class="header-border"></div>
-	</div>
-	<div class="col-md-8 col-md-offset-2">
-		<div class="row">
-			<div class="ninja-heading">Manufacturer</div>
-			<div class="ninja-outline part-less-padding"><%= @part.manufacturer %></div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="ninja-heading">Description</div>
-			<div class="ninja-outline"><%= @part.description %></div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="ninja-heading">Part Number</div>
-			<div class="ninja-modifications"><%= @part.part_number %></div>
-		</div>
-		<div class="row">
-			<div class="ninja-heading">Part Number</div>
-			<div class="ninja-modifications"><%= @part.part_number %></div>
-		</div>
-		<div class="row">
-			<div class="ninja-heading">Fits OEM Vehicles</div>
-			<div class="ninja-modifications"><% @part.vehicles.each do |f| %> <p><%= f.make %></p> <% end %></div>
-		</div>
-		<% if @part.steps %>
-			<div class="row">
-				<br>
-				<div class="ninja-heading">Steps Required (<%= @part.steps.count %>)</div>
-				<div class="header-border"></div>
-				<%= render @part.steps %>
-			</div>
-		<% end %>
-	</div>
-</div>
- -->
 <div class="content">
 	<div class="col-md-12">
 		<h1 class="white-page-heading">Viewing Compatible Part</h1>
-		<h1 class="red-page-heading"><%= @part.manufacturer %> <%= @part.description %></h1>
+		<h1 class="red-page-heading"><%= @part.manufacturer %> <%= @part.name %></h1>
 		<div class="header-border"></div>
 	</div>
 	<div class="col-md-10 col-md-offset-1">	
 		<div class="ninja-panel pad-20">	
 			<div class="row">
-				<div class="col-md-4"><div class="form-header">Manufacturer:</div> <%= @part.manufacturer %></div>
-				<div class="col-md-4"><div class="form-header">Description:</div> <%= @part.description %></div>
-				<div class="col-md-4"><div class="form-header">Part Number:</div> <%= @part.part_number %></div>
+				<div class="col-md-4"><div class="form-header">Manufacturer:</div> <%= @part.manufacturer %> <br><div class="form-header">Part Name:</div> <%= @part.name %> <br><div class="form-header">Part Number:</div> <%= @part.part_number %></div>
+				<div class="col-md-8"><div class="form-header">Description: </div> <%= @part.description %></div>
 			</div>
+			<br>
 			<% unless @part.vehicles.count == 0 %>
 				<div class="row mrg-top-20">
 					<div class="col-md-12">		

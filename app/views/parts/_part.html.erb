@@ -2,7 +2,7 @@
 	<td><%= part.id %></td>
 	<td><%= link_to part.user.username, part.user %></td>
 	<td><%= part.manufacturer %></td>
-	<td><%= part.description %></td>
+	<td><%= part.name %></td>
 	<td><%= part.part_number %></td>
 	<td><%= link_to 'View', part, class: "btn btn-default" %></td>
 	<td><%= link_to 'Delete', part, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-warning" %></td>

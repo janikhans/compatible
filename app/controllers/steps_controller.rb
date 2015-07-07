@@ -1,15 +1,15 @@
 class StepsController < ApplicationController
-	before_action :set_part
+	before_action :set_discovery
 
 	def create
-		@step = @part.steps.create(step_params)
-		redirect_to @part
+		@step = @discovery.steps.create(step_params)
+		redirect_to @discovery
 	end
 
 	private
 
-	def set_part
-		@part = Part.find(params[:part_id])
+	def set_discovery
+		@discovery = Discovery.find(params[:discovery_id])
 	end
 
 	def step_params
