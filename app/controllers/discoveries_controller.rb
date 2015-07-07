@@ -69,6 +69,6 @@ class DiscoveriesController < ApplicationController
 		end
 	
 		def edit_discovery_params
-			params.require(:discovery).permit(:comment, :replaces, :modifications, steps_attributes: [:id, :content, :_destroy])
+			params.require(:discovery).permit(:comment, :replaces, :modifications)
 		end
 end

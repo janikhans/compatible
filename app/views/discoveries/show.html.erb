@@ -31,14 +31,6 @@
 				<div class="col-md-4"><div class="form-header">Are Mods Required?</div> <%= @discovery.modifications %></div>
 				<div class="col-md-4"><div class="form-header">Discovered By:</div> <%= @discovery.user.username %></div>
 			</div>
-
-			<div class="row">
-				<br>
-				<div class="ninja-heading">Steps Required (<%= @discovery.steps.count %>)</div>
-				<div class="header-border"></div>
-				<%= render @discovery.steps %>
-			</div>
-
 		</div>
 	</div>
 </div>
