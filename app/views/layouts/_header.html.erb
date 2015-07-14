@@ -1,3 +1,5 @@
+
+
 <% if @search %>
 <header class="intro">
         <div class="intro-body">
@@ -6,16 +8,7 @@
                     <div class="col-md-12">
                         <h2 class="intro-what">What are you</h2>
                         <h1 class="brand-heading">Looking for?</h1>
-                        <section class="search">
-                            <form action="" method="">    
-                                <div class="something"></div>      
-                                <input type="search" placeholder="Year">
-                                <input class="second" type="search" placeholder="Make">
-                                <input class="second" type="search" placeholder="Model">
-                                <input class="second" type="search" placeholder="What part?">
-                                <button>Search</button>
-                            </form>
-                        </section>
+                        <%= render 'search/form' %>
                         </a>
                     </div>
                 </div>

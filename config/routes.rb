@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   resources :vehicles
   resources :discoveries
-
   resources :users, only: [:show]
 
+  get 'search' => 'search#index', as: :search
   get 'about' => 'pages#about'
   get 'blog' => 'pages#blog'
   get 'contact' => 'pages#contact'

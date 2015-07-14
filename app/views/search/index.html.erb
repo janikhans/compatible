@@ -1,0 +1,32 @@
+<div class="content">
+	<% if @vehicle %>
+		<div class="col-md-12">
+			<h1 class="white-page-heading">Showing Results For</h1>
+			<h1 class="red-page-heading"><%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %> <i><%= @part %></i></h1>
+			<div class="header-border"></div>
+		</div>
+		<div class="col-md-10 col-md-offset-1">	
+			<div class="ninja-panel pad-20">
+				<h3>Oem Designed Parts</h3>
+			</div>
+			<div class="ninja-panel pad-20 mrg-top-20">
+				<h3>Discoveries</h3>
+				<%= render @discoveries %>
+			</div>
+			<div class="ninja-panel pad-20 mrg-top-20">
+				<h3>The Parts Ninja Potential Compatibilites</h3>
+			</div>
+		</div>
+	<% else %>
+		<div class="col-md-12">
+			<h1 class="white-page-heading">Sorry, No Results Were Found For</h1>
+			<h1 class="red-page-heading"><%= @year %> <%= @make %> <%= @model %> <i><%= @part %></h1>
+			<div class="header-border"></div>
+		</div>
+		<div class="col-md-12">
+			<h1 class="white-page-heading">Search again?</h1>
+			<br>
+			<%= render 'search/form' %>
+		</div>
+	<% end %>	
+</div>
