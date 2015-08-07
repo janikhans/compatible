@@ -9,6 +9,9 @@ class VehiclesController < ApplicationController
 		@vehicle = Vehicle.new
 	end 
 
+	def show
+	end
+
 	def create
 		@vehicle = Vehicle.new(vehicle_params)
 

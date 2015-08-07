@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
 	def home
 		@search = true
+		@discoveries = Discovery.all.count
 	end
 
 	def contact
