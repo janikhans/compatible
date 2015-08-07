@@ -12,7 +12,7 @@
 	<div class="panel panel-default ninja-panel">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= discovery.id %>"><%= discovery.oem.year %> <%= discovery.oem.make %> <%= discovery.oem.model %> <i class="fa fa-arrow-left arrow-color"></i> <i><%= discovery.replaces %> </i><i class="fa fa-arrow-right arrow-color"></i> <%= discovery.compatible.year %> <%= discovery.compatible.make %> <%= discovery.compatible.model %> <span class="pull-right">45</span> </a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= discovery.id %>"><%= discovery.oem.year %> <%= discovery.oem.make %> <%= discovery.oem.model %> <i class="fa fa-arrow-left arrow-color"></i> <i><%= discovery.replaces %> </i><i class="fa fa-arrow-right arrow-color"></i> <%= discovery.compatible.year %> <%= discovery.compatible.make %> <%= discovery.compatible.model %> <span class="pull-right"><%= discovery.score %></span> </a>
             </h4>
         </div>
         <div id="collapse-<%= discovery.id %>" class="panel-collapse collapse">

@@ -6,4 +6,9 @@ class Discovery < ActiveRecord::Base
 	has_many :steps
 	accepts_nested_attributes_for :steps, :reject_if => :all_blank, :allow_destroy => true
 	validates :user_id, :part_id, :oem_id, :compatible_id, :replaces, presence: true
+	acts_as_votable
+
+	def score
+		self.get_upvotes.size - self.get_downvotes.size
+	end
 end

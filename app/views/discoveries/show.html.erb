@@ -4,14 +4,24 @@
 		<h1 class="red-page-heading">Stuff</h1>
 		<div class="header-border"></div>
 	</div>
-	<div class="col-md-10 col-md-offset-1">	
-		<div class="ninja-panel pad-20">	
-				<h5>This Part:</h5><p>
-				<div class="col-md-4"><div class="form-header">Manufacturer:</div> <%= @discovery.part.manufacturer %></div>
-				<div class="col-md-4"><div class="form-header">Name:</div> <%= @discovery.part.name %></div>
-				<div class="col-md-4"><div class="form-header">Part Number:</div> <%= @discovery.part.part_number %></div>
-				<div class="text-right"><%= link_to "View Part", @discovery.part, class: "btn btn-default btn-sm" %></div> 
-		</div>
+	<div class="col-md-10 col-md-offset-1">
+		<div class="ninja-panel pad-20">
+			<div class="col-md-2 voting">	
+					<h5>Rating</h5>
+				<ul class="">
+					<li class="grey-box"><%= link_to upvote_discovery_path(@discovery), method: :put do %><i class="fa fa-thumbs-up fa-2x green"></i><% end %></li>
+					<li><%= @discovery.score %></li>
+					<li><%= link_to downvote_discovery_path(@discovery), method: :put do %><i class="fa fa-thumbs-down fa-2x red"></i><% end %></li>
+				</ul>
+			</div>
+			<div class="col-md-10">	
+					<h5>This Part:</h5><p>
+					<div class="col-md-4"><div class="form-header">Manufacturer:</div> <%= @discovery.part.manufacturer %></div>
+					<div class="col-md-4"><div class="form-header">Name:</div> <%= @discovery.part.name %></div>
+					<div class="col-md-4"><div class="form-header">Part Number:</div> <%= @discovery.part.part_number %></div>
+					<div class="text-right"><%= link_to "View Part", @discovery.part, class: "btn btn-default btn-sm" %></div> 
+			</div>
+		</div>	
 			<div class="ninja-panel pad-20 mrg-top-20">
 				<h5>From this vehicle:</h5>
 				<div class="col-md-4"><div class="form-header">Year:</div> <%= @discovery.oem.year %></div>
@@ -32,11 +42,11 @@
 				<div class="col-md-4"><div class="form-header">Discovered By:</div> <%= @discovery.user.username %></div>
 			</div>
 			<% unless @steps.count == 0 %>
-			<div class="ninja-panel pad-20 mrg-top-20">
-				<div class="ninja-heading">Steps Required (<%= @steps.count %>)</div>
-				<div class="header-border"></div>
-				<%= render @steps %>
-			</div>
+				<div class="ninja-panel pad-20 mrg-top-20">
+					<div class="ninja-heading">Steps Required (<%= @steps.count %>)</div>
+					<div class="header-border"></div>
+					<%= render @steps %>
+				</div>
 			<% end %>
 		</div>
 	</div>

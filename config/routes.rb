@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   end
 
   resources :vehicles
-  resources :discoveries
+  resources :discoveries do
+    member do
+      put "upvote" => "discoveries#upvote"
+      put "downvote" => "discoveries#downvote"
+    end
+  end
+
   resources :users, only: [:show]
 
   get 'search' => 'search#index', as: :search

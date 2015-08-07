@@ -1,5 +1,5 @@
 class DiscoveriesController < ApplicationController
-	before_action :set_discovery, only: [:show, :edit, :update, :destroy]
+	before_action :set_discovery, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
@@ -66,6 +66,16 @@ class DiscoveriesController < ApplicationController
   def destroy
   	@discovery.destroy
   	redirect_to discoveries_path
+  end
+
+  def upvote
+  	@discovery.upvote_from current_user
+  	redirect_to @discovery
+  end
+
+  def downvote
+  	@discovery.downvote_from current_user
+  	redirect_to @discovery
   end
 
 	private 
