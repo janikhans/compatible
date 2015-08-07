@@ -40,21 +40,15 @@
 		</div>
 		<% unless @part.discoveries.count == 0 %>
 			<div class="ninja-panel pad-20 mrg-top-20">
-				<h4 class="text-center mrg-btm-10">This part is compatible between the following models:</h4>
+				<h4 class="text-center mrg-btm-10">This part is also compatible with the following models:</h4>
 					<% @part.discoveries.each do |discovery| %>
-								<%= link_to discovery do %>
-									<div class="well dark-well pad-btm-35">
-										<div class="col-md-5">	
-											<%= discovery.compatible.year %> <%= discovery.compatible.make %> <%=discovery.compatible.model %>
-										</div>
-										<div class="col-md-2 text-center">
-											AND
-										</div>
-										<div class="col-md-5 text-right">
-											<%= discovery.oem.year %> <%= discovery.oem.make %> <%= discovery.oem.model %>
-										</div>
-									</div>
-								<% end %>
+						<%= link_to discovery do %>
+							<div class="col-md-6">
+								<div class="well dark-well text-center">
+										<%= discovery.compatible.year %> <%= discovery.compatible.make %> <%=discovery.compatible.model %>
+								</div>		
+							</div>
+						<% end %>
 					<% end %>
 			</div>
 		<% end %>

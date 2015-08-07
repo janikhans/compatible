@@ -18,22 +18,31 @@ class DiscoveriesController < ApplicationController
 	end
 
 	def create
+		#find OEM Vehicle
 		@oem_make = params[:oem_vehicle][:make].upcase
   	@oem_model = params[:oem_vehicle][:model].upcase
   	@oem_year = params[:oem_vehicle][:year]
+  	@oem_vehicle = Vehicle.where(:make => @oem_make, :model => @oem_model, :year => @oem_year).first_or_create
+
+  	#find Compatible Vehicle
   	@compatible_make = params[:compatible_vehicle][:make].upcase
   	@compatible_model = params[:compatible_vehicle][:model].upcase
   	@compatible_year = params[:compatible_vehicle][:year]
+  	@compatible_vehicle = Vehicle.where(:make => @compatible_make, :model => @compatible_model, :year => @compatible_year).first_or_create
+
+  	#find part
   	@part_manufacturer = params[:part][:manufacturer].upcase.strip
   	@part_name = params[:part][:name].strip.split.map(&:capitalize).join(' ')
-    @oem_vehicle = Vehicle.where(:make => @oem_make, :model => @oem_model, :year => @oem_year).first_or_create
-    @compatible_vehicle = Vehicle.where(:make => @compatible_make, :model => @compatible_model, :year => @compatible_year).first_or_create
-    @part = Part.where(manufacturer: @part_manufacturer, name: @part_name).first
-
+    @part = @oem_vehicle.parts.where(manufacturer: @part_manufacturer, name: @part_name).first 
+    #@part = Part.where(manufacturer: @part_manufacturer, name: @part_name).first
+    
+    #Create Part if it doesn't exist
     unless @part
     	@part = current_user.parts.create(manufacturer: @part_manufacturer, name: @part_name)
+    	@oemfitment = current_user.oemfitments.create(part: @part, vehicle: @oem_vehicle)
     end
 
+    #Creates the Discovery with the above found records
 		@discovery = current_user.discoveries.build(discovery_params)
 		@discovery.oem = @oem_vehicle
 		@discovery.compatible = @compatible_vehicle
