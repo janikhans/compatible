@@ -4,24 +4,23 @@
 		<h1 class="red-page-heading">Stuff</h1>
 		<div class="header-border"></div>
 	</div>
-	<div class="col-md-10 col-md-offset-1">
-		<div class="ninja-panel pad-20">
-			<div class="col-md-2 voting">	
-					<h5>Rating</h5>
-				<ul class="">
-					<li class="grey-box"><%= link_to upvote_discovery_path(@discovery), method: :put do %><i class="fa fa-thumbs-up fa-2x green"></i><% end %></li>
-					<li><%= @discovery.score %></li>
-					<li><%= link_to downvote_discovery_path(@discovery), method: :put do %><i class="fa fa-thumbs-down fa-2x red"></i><% end %></li>
-				</ul>
-			</div>
-			<div class="col-md-10">	
-					<h5>This Part:</h5><p>
-					<div class="col-md-4"><div class="form-header">Manufacturer:</div> <%= @discovery.part.manufacturer %></div>
-					<div class="col-md-4"><div class="form-header">Name:</div> <%= @discovery.part.name %></div>
-					<div class="col-md-4"><div class="form-header">Part Number:</div> <%= @discovery.part.part_number %></div>
-					<div class="text-right"><%= link_to "View Part", @discovery.part, class: "btn btn-default btn-sm" %></div> 
-			</div>
-		</div>	
+	<div class="row">
+		<div class="col-md-9">
+			<div class="ninja-panel pad-20">
+				<div class="col-md-2 voting">	
+						<h5>Rating</h5>
+					<ul class="">
+						<li class="grey-box"><%= link_to upvote_discovery_path(@discovery), method: :put do %><i class="fa fa-chevron-up fa-2x green"></i><% end %></li>
+						<li><%= @discovery.score %></li>
+						<li><%= link_to downvote_discovery_path(@discovery), method: :put do %><i class="fa fa-chevron-down fa-2x red"></i><% end %></li>
+					</ul>
+				</div>
+				<div class="col-md-10">	
+						<h5>This Part:</h5><p>
+						<div class="col-md-4"><div class="form-header">Manufacturer:</div> <%= @discovery.part.manufacturer %><br><div class="form-header">Name:</div> <%= @discovery.part.name %><br><div class="form-header">Part Number:</div> <%= @discovery.part.part_number %><br></div>
+						<div class="text-right"><%= link_to "View Part", @discovery.part, class: "btn btn-default btn-sm" %></div> 
+				</div>
+			</div>	
 			<div class="ninja-panel pad-20 mrg-top-20">
 				<h5>From this vehicle:</h5>
 				<div class="col-md-4"><div class="form-header">Year:</div> <%= @discovery.oem.year %></div>
@@ -37,9 +36,8 @@
 			</div>
 			<div class="ninja-panel pad-20 mrg-top-20">
 				<h5>Additional Information</h5>
-				<div class="col-md-4"><div class="form-header">Comments:</div> <%= @discovery.comment %></div>
-				<div class="col-md-4"><div class="form-header">Are Mods Required?</div> <%= @discovery.modifications %></div>
-				<div class="col-md-4"><div class="form-header">Discovered By:</div> <%= @discovery.user.username %></div>
+				<div class="col-md-6"><div class="form-header">Comments:</div> <%= @discovery.comment %></div>
+				<div class="col-md-6"><div class="form-header">Are Mods Required?</div> <%= @discovery.modifications %></div>
 			</div>
 			<% unless @steps.count == 0 %>
 				<div class="ninja-panel pad-20 mrg-top-20">
@@ -48,6 +46,28 @@
 					<%= render @steps %>
 				</div>
 			<% end %>
+		</div>
+		<div class="col-md-3">
+			<div class="profile-sidebar ninja-panel">
+				<div class="profile-userpic">
+					<%= gravatar_for @discovery.user %>
+				</div>
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						<%= @discovery.user.username %>
+					</div>
+					<div class="profile-usertitle-job">
+						Padawan
+					</div>
+					<div class="profile-discoveries">
+						Discoveries: <%= @discovery.user.discoveries.count %>
+					</div>
+				</div>
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-default btn-lg">Follow</button>
+					<button type="button" class="btn btn-default btn-lg">Message</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
