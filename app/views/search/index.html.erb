@@ -7,9 +7,12 @@
 				<div class="header-border"></div>
 			</div>
 			<div class="col-md-10 col-md-offset-1">	
-				<div class="ninja-panel pad-20">
-					<h3>Oem Designed Parts</h3>
-				</div>
+				<% unless @oem_parts.count == 0 %>
+					<div class="ninja-panel pad-20">
+						<h3>OEM Designed Parts</h3>
+						<%= render partial: "oem_part", collection: @oem_parts %>
+					</div>
+				<% end %>
 				<div class="ninja-panel pad-20 mrg-top-20">
 					<h3>Discoveries</h3>
 					<div class="panel-group" id="accordion">
